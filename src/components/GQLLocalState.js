@@ -31,5 +31,5 @@ export default function GQLLocalState() {
     const value = data?.localState.variable ? data.localState.variable : ""
 
 
-    return <input onChange={(e) => { update(e.target.value)} } value={value} />
+    return <div><input onChange={(e) => { update(e.target.value)} } value={value} />, value: {value}</div>
 }

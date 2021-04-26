@@ -15,7 +15,7 @@ import GQLLocalState from "./components/GQLLocalState";
 
 
 function App() {
-  const [context, setContext] = useState("default");
+  const [context, setContext] = useState("default Context");
 
   return (
     <ApolloProvider client={client}>

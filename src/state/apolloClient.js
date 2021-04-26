@@ -1,4 +1,4 @@
-import { InMemoryCache, ApolloClient, makeVar } from '@apollo/client';
+import {InMemoryCache, ApolloClient, makeVar, gql} from '@apollo/client';
 
 export const myReactiveVariable = makeVar("tja");
 
@@ -27,6 +27,20 @@ const client = new ApolloClient({
     }
   }),
   connectToDevTools: true,
+});
+
+client.writeQuery({
+  query: gql`
+      query WriteLocalState {
+          localState {
+              variable
+          }
+      }`,
+  data: { // Contains the data to write
+    localState: {
+      variable: "default Local Store",
+    },
+  }
 });
 
 export {client};

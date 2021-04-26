@@ -120,12 +120,12 @@ function View() {
   const reactiveVariable = data ? data.myReactiveVariable : "";
 
   return <div>
+    GQL Reactive variable <input type="text" name={"exampleVar"} value={reactiveVariable} onChange={varChange} />
+    <p>---</p>
 
     <div>Name: <input name={"name"} value={form.name} onChange={handleChange} /></div>
     <div>ProductID: <input type="number" name={"productID"} value={form.productID} onChange={handleChange} /></div>
     <div><button onClick={submit}>Submit</button></div>
-    <p>---</p>
-    <input type="text" name={"exampleVar"} value={reactiveVariable} onChange={varChange} />
     <p>---</p>
 
     <Products />
