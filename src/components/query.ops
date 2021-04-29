@@ -1,0 +1,13 @@
+import gql from "graphql-tag";
+
+export const GET_PRODUCTS = gql`
+    query GetProducts {
+        viewer {
+            productList(sort: _ID_DESC, limit: 10) {
+                _id
+                name
+                exampleVar @client
+            }
+        }
+    }
+`;

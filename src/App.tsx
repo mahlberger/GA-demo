@@ -1,20 +1,19 @@
-import './App.css';
-import {client} from './state/apolloClient'
-import { ApolloProvider } from '@apollo/client/react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Products from "./views/Products";
-import {ThemeContext} from "./contexts";
-import Context from "./components/Context";
-import {useState} from "react";
-import GQLLocalState from "./components/GQLLocalState";
+import { useState } from "react";
+import * as React from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
+import { ApolloProvider } from "@apollo/client/react";
 
-function App() {
+import Context from "components/Context";
+import GQLLocalState from "components/GQLLocalState";
+
+import Products from "views/Products";
+
+import "App.css";
+import { ThemeContext } from "contexts";
+import { client } from "state/apolloClient";
+
+function App(): JSX.Element {
   const [context, setContext] = useState("default Context");
 
   return (
@@ -23,19 +22,19 @@ function App() {
         <Router>
           <div>
             <nav>
-                  <Link to="/">Home</Link>
+              <Link to="/">Home</Link>
             </nav>
 
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
               <Route path="/">
-                <ThemeContext.Provider value={{context, setContext}}>
+                <ThemeContext.Provider value={{ context, setContext }}>
                   <h2>GQL LocalState:</h2>
-                  <GQLLocalState/>
+                  <GQLLocalState />
                   <h2>Context:</h2>
                   <Context />
-                  <hr/>
+                  <hr />
                   <h2>Products (graphQL remote)</h2>
                   <Products />
                 </ThemeContext.Provider>
@@ -49,4 +48,3 @@ function App() {
 }
 
 export default App;
-

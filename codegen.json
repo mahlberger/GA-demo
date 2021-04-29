@@ -1,0 +1,18 @@
+{
+  "overwrite": true,
+  "schema": "https://graphql-compose.herokuapp.com/northwind/",
+  "hooks": {
+    "afterAllFileWrite": ["prettier --write"]
+  },
+  "generates": {
+    "src/generated/graphql.tsx": {
+      "schema": "./src/graphql/client-schema.graphql",
+      "documents": "./src/graphql/queries/*.graphql",
+      "plugins": ["typescript", "typescript-operations", "typescript-react-apollo"],
+      "config": {
+        "withHooks": true,
+        "withResultType": true
+      }
+    }
+  }
+}

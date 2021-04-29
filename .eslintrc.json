@@ -1,0 +1,26 @@
+{
+  "extends": ["react-app"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": ["error"],
+    "@typescript-eslint/no-var-requires": ["error"],
+    "indent": ["error", 2],
+    "eqeqeq": ["error", "always"],
+    "camelcase": ["error"],
+    "comma-style": ["error", "last"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-implicit-coercion": ["error"],
+    "default-case": ["error"],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "object-curly-spacing": ["error", "always", { "objectsInObjects": true }],
+    "react/prop-types": ["error", { "skipUndeclared": false }],
+    "react/display-name": ["off"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [".*"]
+      }
+    ]
+  }
+}
