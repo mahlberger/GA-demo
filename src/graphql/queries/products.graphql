@@ -1,13 +1,13 @@
 query GetProducts {
-    viewer {
-        productList(sort: _ID_DESC, limit: 10) {
-            _id
-            name
-            supplierID
-            supplier {
-                companyName
-            }
-            exampleVar @client
-        }
+  viewer {
+    productList(sort: _ID_DESC, limit: 10) {
+      _id
+      name
+      supplierID
+      category {
+        name
+      }
+      exampleVar @client
     }
+  }
 }

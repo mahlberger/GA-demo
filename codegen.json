@@ -1,18 +1,20 @@
 {
   "overwrite": true,
-  "schema": "https://graphql-compose.herokuapp.com/northwind/",
+  "schema": ["https://graphql-compose.herokuapp.com/northwind/", "./src/graphql/client-schema.graphql"],
   "hooks": {
     "afterAllFileWrite": ["prettier --write"]
   },
   "generates": {
-    "src/generated/graphql.tsx": {
-      "schema": "./src/graphql/client-schema.graphql",
+    "src/generated/schemaTypes.tsx": {
       "documents": "./src/graphql/queries/*.graphql",
       "plugins": ["typescript", "typescript-operations", "typescript-react-apollo"],
       "config": {
         "withHooks": true,
         "withResultType": true
       }
+    },
+    "src/generated/schemaIntrospection.json": {
+      "plugins": ["introspection"]
     }
   }
 }

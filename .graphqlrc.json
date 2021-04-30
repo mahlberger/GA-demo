@@ -1,0 +1,7 @@
+{
+  "schema": "./src/generated/schemaIntrospection.json",
+  "documents": "src/**/*.{graphql,js,ts,jsx,tsx}",
+  "extensions": {
+    "customDirectives": ["directive @client on FIELD"]
+  }
+}

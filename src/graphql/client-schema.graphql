@@ -2,5 +2,5 @@
 directive @client on FIELD
 
 extend type Product {
-    exampleVar: String
+  exampleVar: String
 }

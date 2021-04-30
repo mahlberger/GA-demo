@@ -3,7 +3,7 @@ import { ChangeEvent, useState } from "react";
 
 import { useMutation, useQuery } from "@apollo/client";
 
-import { useGetProductsQuery } from "generated/graphql";
+import { useGetProductsQuery, GetProductsDocument } from "generated/schemaTypes";
 
 import gql from "graphql-tag";
 import { myReactiveVariable } from "state/apolloClient";
